@@ -1,0 +1,29 @@
+export default interface ICustomer {
+  id: number
+  firstName: string
+  lastName: string
+  telephone: number
+  address1: string
+  address2: string
+  createDate: string
+  city: string
+  state: string
+  zip: string
+  fax: string
+  tax: boolean
+  email: string
+  route: number
+  monthlyFee: number
+  jan: boolean
+  feb: boolean
+  mar: boolean
+  apr: boolean
+  may: boolean
+  jun: boolean
+  jul: boolean
+  aug: boolean
+  sep: boolean
+  oct: boolean
+  nov: boolean
+  dec: boolean
+}
