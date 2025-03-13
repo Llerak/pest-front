@@ -1,20 +1,39 @@
-import axios from 'axios'
+import axios from 'axios';
 
+// Crear una instancia de Axios con configuración base
 const instance = axios.create({
-  baseURL: 'https://silly-tereshkova.173-208-164-34.plesk.page',
-})
+  baseURL: 'http://localhost:3000', // URL base de tu API
+  withCredentials: true, // Permitir el envío de cookies o credenciales
+});
 
+// Interceptor para solicitudes
 instance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('token')
+    // Recuperar el token almacenado en localStorage
+    const token = localStorage.getItem('token');
     if (token) {
-      config.headers['Authorization'] = `Bearer ${token}`
+      // Agregar el encabezado Authorization con el token
+      config.headers['Authorization'] = `Bearer ${token}`;
     }
-    return config
+    return config; // Retornar la configuración modificada
   },
   (error) => {
-    return Promise.reject(error)
-  },
-)
+    // Manejar errores en la configuración de la solicitud
+    return Promise.reject(error);
+  }
+);
 
-export default instance
+// Interceptor para respuestas (opcional)
+instance.interceptors.response.use(
+  (response) => {
+    // Manejar respuestas exitosas
+    return response;
+  },
+  (error) => {
+    // Manejar errores en la respuesta
+    console.error('Error en la respuesta:', error.response || error.message);
+    return Promise.reject(error);
+  }
+);
+
+export default instance;
