@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: 'https://silly-tereshkova.173-208-164-34.plesk.page',
 })
 
 instance.interceptors.request.use(

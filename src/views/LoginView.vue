@@ -5,23 +5,23 @@
       autocomplete="off"
     >
       <div class="flex flex-col gap-2">
-        <h4 class="text-primary">Bienvenido</h4>
-        <p>Ingrese su usuario y contraseña para iniciar sesión</p>
+        <h4 class="text-primary">Welcome</h4>
+        <p>Enter your username and password to log in.</p>
       </div>
       <div class="flex flex-col gap-4">
         <div class="flex flex-col gap-4">
           <InputCustom
-            title="Usuario"
+            title="User"
             v-model="log.name"
             type="text"
-            placeholder="Usuario"
+            placeholder="User"
             :show-error="false"
           />
           <InputCustom
-            title="Contraseña"
+            title="Password"
             v-model="log.password"
             type="password"
-            placeholder="Contraseña"
+            placeholder="Password"
             :show-error="false"
           />
         </div>
@@ -32,10 +32,10 @@
               'scale-100': showErrorGeneral,
               'scale-0': !showErrorGeneral,
             }"
-            >Usuario o contraseña incorrecto</span
+            >Incorrect username or password</span
           >
           <button class="w-full bg-primary text-white" @click="handleLogin" type="button">
-            INICIAR
+            SING IN
           </button>
         </div>
       </div>
